@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Report Card - Grade {GRADE}</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    table,
+    th,
+    td,
+    #table1,
+    #table2 {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    table {
+      margin: 1em auto;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 0.5em;
+      text-align: left;
+    }
+
+    thead th {
+      background-color: purple;
+      color: #fff;
+    }
+
+    #table1 {
+      width: 100%;
+      height: 113vh;
+      background:
+        url('../pages/page1.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #table1 table {
+      margin: 32vw 0 0 3vw;
+      font-size: 30px;
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+
+    #table2 {
+      width: 100%;
+      height: 113vh;
+      background:
+        url('../pages/page2.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #table3 {
+      width: 100%;
+      height: 113vh;
+      background:
+        url('../pages/page3.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #table3 table {
+      margin: 16vw 0 0 28vw;
+      font-size: 30px;
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+
+    #table3 table td {
+      padding: 7.5px 110px;
+      text-align: center;
+    }
+
+    .overallgrade {
+      display: block;
+      margin-left: 70vw;
+      padding: 7.5px 110px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+    #table4 {
+      width: 100%;
+      height: 113vh;
+      background:
+        url('../pages/page4.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #table4 .vadc {
+      display: flex;
+      margin: 27vw 0 0 40vw;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+    .vadc div {
+      margin: 0 150px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+    #table5 {
+      width: 100%;
+      height: 113vh;
+      background:
+        url('../pages/page5.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #table6 {
+      width: 100%;
+      height: 113vh;
+      background:
+        url('../pages/page6.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pagebreaking {
+      page-break-after: always;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="table1" class="pagebreaking">
+    <table>
+      <tr>
+        <td>{{STUDENT_NAME}}</td>
+      </tr>
+      <tr>
+        <td>{{ROLL_NO}}</td>
+      </tr>
+      <tr>
+        <td>{{OVERALL_GRADE}}</td>
+      </tr>
+    </table>
+  </div>
+  <div id="table2" class="pagebreaking"></div>
+  <div id="table3" class="pagebreaking">
+    <table>
+      <tbody>
+        {{SUBJECT_ROWS}}
+        
+      </tbody>
+    </table>
+    <div class="overallgrade">
+      {{OVERALL_GRADE}}
+    </div>
+  </div>
+  <div id="table4" class="pagebreaking">
+    <div class="vadc">
+      <!-- <div>{{VADC_term1}}</div>
+      <div>{{VADC_term2}}</div> -->
+      <div>A</div>
+      <div>B</div>
+  </div>
+  </div>
+  <div id="table5" class="pagebreaking"></div>
+  <div id="table6" class="pagebreaking"></div>
+</body>
+
+</html>
